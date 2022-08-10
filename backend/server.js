@@ -21,6 +21,8 @@ connectDb()
 app.use('/api/user',userRoutes)
 app.use("/api/debate",debateRoutes)
 app.use("/api/message",messageRoutes)
+app.use(notFound);
+app.use(onError);
 
 const path=require('path')
 const __dirname1=path.resolve()
@@ -36,8 +38,7 @@ res.send("Api runnning")
 })}
 
 
-app.use(notFound);
-app.use(onError);
+
 const PORT=process.env.PORT;
 const server =app.listen(PORT,console.log(`${PORT}`))
 const io = require("socket.io")(server, {
