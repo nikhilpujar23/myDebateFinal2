@@ -21,14 +21,15 @@ connectDb()
 app.use('/api/user',userRoutes)
 app.use("/api/debate",debateRoutes)
 app.use("/api/message",messageRoutes)
-app.use(notFound);
-app.use(onError);
+
 
 const path=require('path')
 const __dirname1=path.resolve()
-if(process.env.NODE_ENV=='production'){
+if(process.env.NODE_ENV==='production'){
+   console.log('fdsf')
 app.use(express.static(path.join(__dirname1,'/frontend/build')));
 app.get('*',(req,res)=>{
+ 
     res.sendFile(path.resolve(__dirname1,"frontend","build","index.html"));
 })
 }
@@ -37,7 +38,8 @@ app.get('/',(req,res)=>{
 res.send("Api runnning")
 })}
 
-
+app.use(notFound);
+app.use(onError);
 
 const PORT=process.env.PORT;
 const server =app.listen(PORT,console.log(`${PORT}`))
