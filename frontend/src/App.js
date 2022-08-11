@@ -15,11 +15,12 @@ const navigate=useNavigate();
  useEffect(() => {
      
    const data = JSON.parse(localStorage.getItem('data'));
+   console.log(data);
    if(data)
   setUser(data);
     
   
-  });
+  },[user]);
   return (
    
      
