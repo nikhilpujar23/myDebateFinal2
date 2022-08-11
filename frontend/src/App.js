@@ -20,7 +20,7 @@ const navigate=useNavigate();
   setUser(data);
     
   
-  },[user]);
+  },[user,setUser]);
   return (
    
      
