@@ -15,6 +15,7 @@ function Side() {
      const {user,setUser,debates,selectedDebate,setSelectedDebate,setDebates}=DebateState();
      const logoutHandler=()=>{
         setUser(null)
+        localStorage.removeItem('data');
      }
      const handleSearch = async () => {
     if (!search) {
