@@ -44,7 +44,7 @@ app.use(onError);
 const PORT=process.env.PORT;
 const server =app.listen(PORT,console.log(`${PORT}`))
 const io = require("socket.io")(server, {
-  pingTimeout: 60000,
+  pingTimeout: 6000000,
   cors: {
     origin: "http://localhost:3000",
 
