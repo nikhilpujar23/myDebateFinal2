@@ -1,7 +1,7 @@
 
 import { ChakraProvider} from '@chakra-ui/react';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+
 
 import './App.css';
 import { DebateState } from './Context/DebateProvider';
@@ -11,7 +11,7 @@ import Home from './pages/Home';
 
 function App() {
 const {user,setUser}=DebateState();
-const navigate=useNavigate();
+
  useEffect(() => {
      
    const data = JSON.parse(localStorage.getItem('data'));
@@ -20,7 +20,7 @@ const navigate=useNavigate();
   setUser(data);
     
   
-  },[user,setUser]);
+  },[setUser]);
   return (
    
      
